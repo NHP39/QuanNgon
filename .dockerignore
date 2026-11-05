@@ -1,0 +1,41 @@
+# Credentials and environment files are supplied at runtime.
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/*.jks
+
+# Dependencies and generated build output are recreated in the image.
+frontend/
+**/node_modules
+**/target
+**/dist
+**/dist-ssr
+**/build
+**/coverage
+**/.vite
+**/.cache
+**/*.tsbuildinfo
+**/*.log
+**/logs
+
+# Repository metadata, local IDE settings, backups and tests are not build inputs.
+.git
+**/.git
+.github
+.idea
+.vscode
+.settings
+.classpath
+.project
+**/*.iml
+**/backups
+**/*.dump
+**/*.bak
+**/*.bak-*
+src/test
+.mvn
+mvnw
+mvnw.cmd

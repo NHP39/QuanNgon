@@ -1,0 +1,18 @@
+.address-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.address-field { display: grid; gap: 5px; min-width: 0; margin-bottom: 12px; }
+.address-field > label { color: #263852; font-size: 13px; font-weight: 600; }
+.address-field b { color: #eb331b; }
+.address-fields .address-field input, .address-fields .address-select-trigger { width: 100%; min-width: 0; height: 40px; padding: 0 13px; border: 1px solid #d6e0ec; border-radius: 6px; outline: none; background: #fff; color: #1b2b46; font-size: 14px; font-weight: 400; }
+.address-field input::placeholder { color: #8a9ab0; }
+.address-fields .address-field input:focus, .address-fields .address-select-trigger:focus { border-color: #e44c19; box-shadow: 0 0 0 3px rgba(228, 76, 25, .1); }
+.address-fields .address-field input:disabled, .address-fields .address-select-trigger:disabled { color: #8a9ab0; background: #f5f7f9; }
+.address-select { position: relative; min-width: 0; }
+.address-select-trigger { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; }
+.address-select-trigger > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.address-select-trigger > svg { width: 16px; height: 16px; flex: none; color: #7586a0; }
+.address-fields .address-select-trigger.is-placeholder { color: #8a9ab0; }
+.address-select-options { position: absolute; z-index: 30; top: calc(100% + 6px); left: 0; right: 0; max-height: min(220px, 45vh); margin: 0; padding: 4px; overflow-y: auto; overscroll-behavior: contain; border: 1px solid #d6e0ec; border-radius: 6px; background: #fff; box-shadow: 0 6px 18px rgba(27, 43, 70, .12); list-style: none; }
+.address-select-option { padding: 8px; border-radius: 4px; color: #1b2b46; font-size: 14px; line-height: 1.4; cursor: pointer; overflow-wrap: anywhere; }
+.address-select-option.is-active { background: #fff2ec; }
+.address-select-option[aria-selected="true"] { color: #ca3717; font-weight: 600; }
+@media (max-width: 650px) { .address-fields { grid-template-columns: 1fr; } }

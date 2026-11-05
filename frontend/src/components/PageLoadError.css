@@ -1,0 +1,31 @@
+body:has(> .page-load-error--full) { overflow: hidden; }
+body:has(> .page-load-error--full) #root { display: none; }
+.page-load-error {
+    box-sizing: border-box;
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    min-width: 0;
+    min-height: 60dvh;
+    padding: 48px 24px;
+    color: #172b46;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.page-load-error h1, .page-load-error h2 { max-width: 100%; margin: 0; color: #172b46; font-size: clamp(23px, 3vw, 32px); line-height: 1.35; overflow-wrap: anywhere; }
+.page-load-error p { margin: 0; color: #64748b; font-size: 15px; line-height: 1.6; }
+.page-load-error .page-load-error-retry { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; margin-top: 8px; padding: 10px 22px; border: 0; border-radius: 8px; background: #ee461f; color: #fff; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.page-load-error .page-load-error-retry:hover { background: #d83d17; }
+.page-load-error .page-load-error-retry:focus-visible { outline: 3px solid #f9aa87; outline-offset: 4px; }
+.page-load-error--compact { min-height: 0; padding: 28px 16px; gap: 10px; }
+.page-load-error--compact h2 { font-size: 20px; }
+.page-load-error--full { position: fixed; inset: 0; z-index: 1000; min-height: 100dvh; overflow-y: auto; background: #f7f9fb; }
+@media (max-width: 600px) {
+    .page-load-error { padding: 36px 16px; }
+    .page-load-error--compact { padding: 24px 12px; }
+    .page-load-error p { font-size: 14px; }
+}

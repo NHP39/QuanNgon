@@ -1,0 +1,150 @@
+.admin-owner-avatar { display: grid; place-items: center; width: 42px; height: 42px; flex: none; border-radius: 50%; background: #fff0e8; color: #d63a12; }
+.admin-owner-avatar svg { width: 27px; height: 27px; fill: #d63a12; stroke: #d63a12; }
+.admin-status-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; margin-bottom: 13px; padding: 6px; border: 1px solid #e8edf2; border-radius: 8px; background: #fff; box-shadow: 0 5px 18px rgba(24, 42, 65, .035); }
+.admin-status-tabs button { display: flex; align-items: center; justify-content: center; gap: 10px; min-width: 0; min-height: 44px; padding: 0 8px; border: 0; border-right: 1px solid #e9edf2; border-radius: 5px; background: transparent; color: #4e607b; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.admin-status-tabs button:last-child { border-right: 0; }
+.admin-status-tabs button.is-active { border-right-color: transparent; background: #fff0e9; color: #d63917; }
+.admin-status-tabs button > svg { width: 19px; height: 19px; flex: none; color: #f04420; }
+.admin-status-tabs button > strong { display: grid; place-items: center; min-width: 27px; height: 24px; padding: 0 6px; border-radius: 20px; background: #eef1f5; color: #52647e; font-size: 12px; }
+.admin-status-tabs button.is-active > strong { background: #f1492a; color: #fff; }
+.admin-list-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 15px; min-height: 34px; margin-bottom: 9px; color: #7d8ca0; font-size: 12px; }
+.admin-search { display: flex; align-items: center; gap: 7px; width: min(290px, 100%); height: 34px; padding: 0 10px; border: 1px solid #dfe6ed; border-radius: 5px; background: #fff; }
+.admin-search svg { width: 16px; height: 16px; flex: none; color: #8898aa; }
+.admin-search input { width: 100%; min-width: 0; border: 0; outline: 0; color: #283b56; font-size: 12px; }
+.admin-eatery-list { display: grid; gap: 11px; }
+.admin-eatery-card { display: grid; grid-template-columns: 152px minmax(220px, 1fr) 218px 174px; align-items: stretch; gap: 17px; min-width: 0; padding: 12px 15px; border: 1px solid #e9eef2; border-radius: 8px; background: #fff; box-shadow: 0 4px 18px rgba(24, 42, 65, .035); }
+.admin-eatery-cover { display: block; align-self: start; width: 152px; aspect-ratio: var(--eatery-image-ratio); overflow: hidden; padding: 0; border: 0; border-radius: 6px; background: var(--eatery-image-background); }
+.admin-eatery-cover img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.admin-eatery-info { min-width: 0; }
+.admin-eatery-title { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 1px 0 6px; }
+.admin-eatery-title h2 { margin: 0; color: #192941; font-size: 16px; line-height: 1.25; overflow-wrap: anywhere; }
+.admin-status { display: inline-flex; align-items: center; min-height: 23px; padding: 0 9px; border-radius: 5px; background: #fff0e4; color: #dd5c16; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.admin-status.is-approved { background: #e9f7ee; color: #27835d; }
+.admin-status.is-rejected { background: #fcebec; color: #c13d42; }
+.admin-status.is-hidden { background: #eef1f4; color: #667789; }
+.admin-eatery-meta { display: grid; gap: 3px; color: #687a95; font-size: 11px; }
+.admin-eatery-meta > span { display: flex; align-items: start; gap: 7px; min-width: 0; line-height: 1.3; }
+.admin-eatery-meta svg { width: 14px; height: 14px; flex: none; color: #f04b23; }
+.admin-eatery-info > p { margin: 6px 0 8px; overflow: hidden; color: #687a95; font-size: 11px; line-height: 1.4; text-overflow: ellipsis; white-space: nowrap; }
+.admin-eatery-gallery { display: flex; gap: 6px; max-width: 100%; overflow-x: auto; }
+.admin-eatery-gallery button { width: 46px; aspect-ratio: var(--eatery-image-ratio); flex: none; overflow: hidden; padding: 0; border: 0; border-radius: 4px; background: var(--eatery-image-background); }
+.admin-eatery-gallery img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.admin-eatery-gallery .admin-gallery-more { display: grid; place-items: center; background: #293341; color: #fff; font-size: 12px; font-weight: 800; }
+.admin-eatery-owner { display: grid; align-content: start; gap: 14px; min-width: 0; margin: 8px 0; padding: 3px 0 0 18px; border-left: 1px solid #e8edf2; }
+.admin-owner-line { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.admin-owner-avatar { width: 38px; height: 38px; }
+.admin-owner-avatar svg { width: 23px; height: 23px; }
+.admin-owner-line > div { display: grid; min-width: 0; gap: 3px; }
+.admin-owner-line strong, .admin-owner-line small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.admin-owner-line strong { color: #455771; font-size: 12px; }
+.admin-owner-line small { color: #8a9ab0; font-size: 11px; }
+.admin-date-line { display: flex; align-items: start; gap: 10px; color: #8796aa; font-size: 11px; line-height: 1.6; }
+.admin-date-line svg { width: 19px; height: 19px; flex: none; color: #7589a2; }
+.admin-date-line strong { color: #687b98; font-size: 11px; font-weight: 500; }
+.admin-eatery-actions { display: flex; flex-direction: column; align-items: stretch; gap: 6px; min-width: 0; margin: 8px 0; padding-left: 15px; border-left: 1px solid #e8edf2; }
+.admin-eatery-actions > button { display: inline-flex; justify-content: center; align-items: center; gap: 6px; min-height: 37px; padding: 0 8px; border: 1px solid #f04421; border-radius: 6px; background: #fff; color: #e03415; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.admin-eatery-actions > button.admin-approve { background: #fa5226; color: #fff; }
+.admin-eatery-actions > button.admin-approve:hover { background: #d43916; }
+.admin-eatery-actions > button.admin-reject:hover { background: #fff1ec; }
+.admin-eatery-actions > button svg { width: 16px; height: 16px; }
+.admin-eatery-actions > button.admin-details-button { margin-top: auto; border-color: #dfe6ed; color: #455b76; }
+.admin-eatery-actions > button.admin-details-button:hover { background: #f4f7fa; }
+.admin-pagination { display: flex; justify-content: center; gap: 6px; margin-top: 18px; }
+.admin-pagination button { display: grid; place-items: center; min-width: 33px; height: 33px; padding: 0 7px; border: 1px solid #dce5ed; border-radius: 5px; background: #fff; color: #52677f; font-size: 12px; }
+.admin-pagination button.is-active { border-color: #e74927; background: #e74927; color: #fff; }
+.admin-pagination svg { width: 15px; height: 15px; }
+.admin-empty { display: grid; justify-items: center; align-content: center; gap: 9px; min-height: 250px; border: 1px solid #e8edf2; border-radius: 7px; background: #fff; color: #8494a9; text-align: center; }
+.admin-empty svg { width: 32px; height: 32px; color: #e54524; }
+.admin-empty h2 { margin: 0; color: #273a55; font-size: 17px; }
+.admin-empty p { margin: 0; font-size: 13px; }
+.admin-overlay { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 16px; background: rgba(17, 29, 46, .66); }
+.admin-dialog { width: min(440px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto; padding: 22px; border-radius: 7px; background: #fff; box-shadow: 0 20px 55px rgba(0, 0, 0, .2); }
+.admin-dialog-heading { display: flex; align-items: start; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+.admin-dialog-heading h2 { margin: 0; color: #182a43; font-size: 20px; }
+.admin-dialog-heading button { display: grid; place-items: center; width: 28px; height: 28px; flex: none; padding: 0; border: 0; background: transparent; color: #6f8094; }
+.admin-dialog-heading svg { width: 19px; height: 19px; }
+.admin-dialog > p { margin: 0 0 16px; color: #61738b; font-size: 13px; line-height: 1.6; }
+.admin-dialog > p strong { color: #23354e; }
+.admin-reason-label { display: grid; gap: 7px; color: #2f4059; font-size: 12px; font-weight: 700; }
+.admin-reason-label span { color: #df3518; }
+.admin-reason-label textarea { width: 100%; resize: vertical; padding: 10px; border: 1px solid #d9e2eb; border-radius: 5px; color: #293a54; font-size: 13px; font-weight: 400; }
+.admin-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 20px; }
+.admin-dialog-actions button { min-height: 35px; padding: 0 12px; border: 1px solid #dce4eb; border-radius: 5px; background: #fff; color: #445770; font-size: 12px; font-weight: 700; }
+.admin-dialog-actions button:last-child { border-color: #ed4c27; background: #ed4c27; color: #fff; }
+.admin-dialog-actions button:last-child.is-danger { border-color: #d33822; background: #d33822; }
+.admin-details-dialog { width: min(620px, 100%); }
+.admin-details-head { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; }
+.admin-details-head h3 { margin: 0; color: #172943; font-size: 18px; }
+.admin-details-dialog > p { margin: 12px 0; }
+.admin-details-dialog dl { display: grid; gap: 9px; margin: 0; }
+.admin-details-dialog dl > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 12px; padding-bottom: 8px; border-bottom: 1px solid #edf0f3; font-size: 12px; }
+.admin-details-dialog dt { color: #8a9aaf; }
+.admin-details-dialog dd { margin: 0; color: #3f536e; overflow-wrap: anywhere; }
+.admin-details-photos { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+.admin-details-photos button { width: 77px; aspect-ratio: var(--eatery-image-ratio); overflow: hidden; padding: 0; border: 0; border-radius: 4px; background: var(--eatery-image-background); }
+.admin-details-photos img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.admin-lightbox-stage { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.admin-lightbox-stage > button { display: grid; place-items: center; width: 34px; height: 34px; flex: none; padding: 0; border: 0; border-radius: 50%; background: #fff; color: #223650; }
+.admin-lightbox-stage > button svg { width: 18px; height: 18px; }
+
+.admin-eatery-results { min-height: 250px; }
+.admin-photo-fallback { display: grid; place-items: center; width: 100%; height: 100%; background: var(--eatery-image-background); color: #8b9bad; }
+.admin-photo-fallback svg { width: 26px; height: 26px; }
+.admin-eatery-pagination { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 18px; color: #71839b; font-size: 12px; }
+.admin-eatery-pagination .admin-pagination { flex-wrap: wrap; margin-top: 0; }
+.admin-page-entry { display: inline-flex; align-items: center; gap: 6px; }
+.admin-page-gap { padding: 0 3px; }
+.admin-empty.admin-eatery-error { padding: 20px; }
+.admin-eatery-error p { max-width: 100%; overflow-wrap: anywhere; }
+.admin-list-error-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.admin-list-error-actions a { color: #c4381a; }
+.admin-list-error-actions button, .admin-action-refresh button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding: 0 12px; border: 1px solid #dce4eb; border-radius: 5px; background: #fff; color: #405874; font-size: 12px; }
+.admin-list-error-actions svg, .admin-action-refresh svg { width: 16px; height: 16px; }
+.admin-dialog > .admin-action-error { padding: 10px; border: 1px solid #f1c7b7; border-radius: 5px; background: #fff5f0; color: #a43a1a; overflow-wrap: anywhere; }
+.admin-action-refresh { display: flex; align-items: center; flex-wrap: wrap; gap: 7px; }
+.admin-action-summary { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #e8edf2; }
+.admin-action-summary p, .admin-eatery-description { white-space: pre-wrap; overflow-wrap: anywhere; }
+.admin-action-summary p { max-height: 190px; overflow-y: auto; margin: 10px 0; color: #3f536d; font-size: 13px; line-height: 1.6; }
+.admin-action-summary small { display: block; color: #788ba2; font-size: 12px; overflow-wrap: anywhere; }
+.admin-reason-label textarea { min-width: 0; }
+.admin-photo-dialog { width: min(1050px, 100%); }
+.admin-photo-stage { display: grid; place-items: center; width: min(100%, calc((100dvh - 180px) * 4 / 3)); min-width: 0; aspect-ratio: var(--eatery-image-ratio); overflow: hidden; background: var(--eatery-image-background); }
+.admin-photo-stage > img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.admin-loading-icon { animation: admin-eatery-spin 1s linear infinite; }
+@keyframes admin-eatery-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .admin-loading-icon { animation: none; } }
+
+@media (max-width: 1250px) {
+    .admin-eatery-card { grid-template-columns: 130px minmax(190px, 1fr) 176px 135px; gap: 11px; padding: 11px; }
+    .admin-eatery-cover { width: 130px; }
+    .admin-eatery-owner { padding-left: 10px; }
+    .admin-eatery-actions { padding-left: 10px; }
+}
+@media (max-width: 1000px) {
+    .admin-eatery-card { grid-template-columns: 128px minmax(0, 1fr); }
+    .admin-eatery-cover { width: 128px; }
+    .admin-eatery-owner { grid-column: 1 / 3; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin: 0; padding: 10px 0 0; border-top: 1px solid #eef1f4; border-left: 0; }
+    .admin-eatery-actions { grid-column: 1 / 3; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 7px; margin: 0; padding: 0; border: 0; }
+    .admin-eatery-actions > button { min-width: 115px; }
+    .admin-eatery-actions > button.admin-details-button { margin: 0 0 0 auto; }
+}
+@media (max-width: 700px) {
+    .admin-status-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .admin-status-tabs button { flex-direction: column; gap: 3px; min-height: 58px; font-size: 10px; }
+    .admin-status-tabs button > svg { width: 16px; height: 16px; }
+    .admin-status-tabs button > strong { min-width: 22px; height: 18px; font-size: 10px; }
+}
+@media (max-width: 440px) {
+    .admin-list-toolbar { align-items: stretch; flex-direction: column; gap: 7px; }
+    .admin-search { width: 100%; }
+    .admin-eatery-card { grid-template-columns: 92px minmax(0, 1fr); gap: 10px; }
+    .admin-eatery-cover { width: 92px; }
+    .admin-eatery-title h2 { font-size: 14px; }
+    .admin-eatery-meta { font-size: 10px; }
+    .admin-eatery-info > p { white-space: normal; font-size: 10px; }
+    .admin-eatery-gallery button { width: 32px; }
+    .admin-eatery-gallery { gap: 4px; }
+    .admin-owner-line strong, .admin-owner-line small, .admin-date-line strong { font-size: 10px; }
+    .admin-eatery-actions > button { min-width: 90px; }
+    .admin-details-dialog dl > div { grid-template-columns: 80px minmax(0, 1fr); gap: 8px; }
+}

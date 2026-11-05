@@ -1,0 +1,73 @@
+body:has(.admin-page) { display: block; padding: 0; background: #f5f8fb; }
+#root:has(.admin-page) { display: block; }
+.admin-page { min-height: 100vh; background: #f5f8fb; color: #1b2a43; font-family: Arial, sans-serif; text-align: left; }
+.admin-page * { box-sizing: border-box; }
+.admin-page button, .admin-page input, .admin-page textarea, .admin-page select { font: inherit; }
+.admin-page button { cursor: pointer; }
+.admin-page button:disabled { cursor: not-allowed; opacity: .45; }
+.admin-page :is(a, button, input, textarea, select, summary):focus-visible { outline: 2px solid #e54424; outline-offset: 2px; }
+.admin-topbar { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; min-height: 62px; padding: 0 32px; border-bottom: 1px solid #e9eef2; background: #fff; box-shadow: 0 3px 15px rgba(21, 34, 52, .04); }
+.admin-brand { color: #ba290d; font-size: 27px; font-style: italic; font-weight: 800; text-decoration: none; white-space: nowrap; }
+.admin-topbar-actions { display: flex; align-items: center; gap: 12px; }
+.admin-back-home { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 38px; padding: 0 10px; border-radius: 6px; color: #455b76; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.admin-back-home:hover { background: #f4f7fa; }
+.admin-back-home svg { width: 18px; height: 18px; flex: none; }
+.admin-logout { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 38px; padding: 0 17px; border: 1px solid #ee8c78; border-radius: 7px; background: #fff; color: #db2f14; font-size: 13px; font-weight: 700; }
+.admin-logout:hover { background: #fff2ed; }
+.admin-logout svg { width: 18px; height: 18px; }
+.admin-body { display: grid; grid-template-columns: 246px minmax(0, 1fr); align-items: start; min-height: calc(100vh - 62px); }
+.admin-sidebar { position: sticky; top: 62px; display: flex; flex-direction: column; justify-content: space-between; height: calc(100vh - 62px); min-height: 510px; border-right: 1px solid #e7edf2; background: #fff; }
+.admin-side-nav { display: grid; align-content: start; gap: 6px; padding: 26px 14px; }
+.admin-side-item { display: flex; align-items: center; gap: 14px; min-height: 45px; padding: 0 14px; border-radius: 7px; color: #546780; font-size: 13px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+.admin-side-item svg { width: 20px; height: 20px; flex: none; color: #f04420; stroke-width: 2; }
+.admin-side-item:hover, .admin-side-item.is-active { background: #fff0e9; color: #c12e12; }
+.admin-side-item.is-active { font-weight: 700; }
+.admin-sidebar-account { display: flex; align-items: center; gap: 10px; min-height: 83px; padding: 12px 17px; border-top: 1px solid #edf1f5; }
+.admin-sidebar-avatar { display: grid; place-items: center; width: 42px; height: 42px; flex: none; border-radius: 50%; background: #fff0e8; color: #d63a12; }
+.admin-sidebar-avatar svg { width: 27px; height: 27px; }
+.admin-sidebar-identity { display: grid; min-width: 0; gap: 3px; }
+.admin-sidebar-identity strong, .admin-sidebar-identity small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.admin-sidebar-identity strong { color: #263751; font-size: 13px; }
+.admin-sidebar-identity small { color: #8796aa; font-size: 11px; }
+.admin-main { width: min(1460px, 100%); min-width: 0; margin: 0 auto; padding: 24px 24px 65px; }
+.admin-heading { display: flex; justify-content: space-between; align-items: start; gap: 14px; margin-bottom: 19px; }
+.admin-heading h1 { margin: 0 0 5px; color: #17243d; font-size: 29px; line-height: 1.2; }
+.admin-heading p { margin: 0; color: #6d7e97; font-size: 14px; }
+.admin-layout-error { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 15px; padding: 9px 12px; border: 1px solid #efc3b6; border-radius: 5px; background: #fff4ef; color: #a73118; font-size: 12px; }
+.admin-layout-error button { display: grid; place-items: center; width: 22px; height: 22px; padding: 0; border: 0; background: none; color: inherit; }
+.admin-layout-error svg { width: 16px; height: 16px; }
+.admin-notice { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 13px; padding: 9px 12px; border: 1px solid #cee8d9; border-radius: 5px; background: #f0fbf4; color: #1f7450; font-size: 12px; }
+.admin-notice button { display: grid; place-items: center; width: 22px; height: 22px; padding: 0; border: 0; background: transparent; color: inherit; }
+.admin-notice svg { width: 16px; height: 16px; }
+.admin-gate { display: grid; justify-items: center; align-content: center; gap: 12px; min-height: calc(100vh - 62px); color: #708197; text-align: center; }
+.admin-gate h1 { margin: 0; color: #20324b; font-size: 24px; }
+.admin-gate p { margin: 0; font-size: 13px; }
+.admin-gate a { color: #d23a19; font-size: 13px; }
+.admin-gate-actions { display: flex; align-items: center; gap: 14px; }
+.admin-gate-actions button { padding: 0; border: 0; background: transparent; color: #405b83; font-size: 13px; text-decoration: underline; }
+
+@media (max-width: 1250px) {
+    .admin-body { grid-template-columns: 215px minmax(0, 1fr); }
+    .admin-main { padding-right: 17px; padding-left: 17px; }
+}
+@media (max-width: 700px) {
+    .admin-topbar { min-height: 56px; padding: 0 14px; }
+    .admin-brand { font-size: 22px; }
+    .admin-logout { min-height: 33px; padding: 0 10px; font-size: 11px; }
+    .admin-topbar-actions { gap: 8px; }
+    .admin-back-home { min-height: 33px; padding: 0 8px; font-size: 11px; }
+    .admin-body { display: block; }
+    .admin-sidebar { position: static; height: auto; min-height: 0; border-right: 0; border-bottom: 1px solid #e7edf2; }
+    .admin-side-nav { display: flex; overflow-x: auto; gap: 7px; padding: 9px 12px; }
+    .admin-side-item { min-height: 34px; gap: 6px; padding: 0 9px; border: 1px solid #edf0f3; background: #fff; font-size: 11px; }
+    .admin-side-item svg { width: 16px; height: 16px; }
+    .admin-sidebar-account { display: none; }
+    .admin-main { padding: 19px 12px 48px; }
+    .admin-heading h1 { font-size: 24px; }
+    .admin-heading p { font-size: 12px; line-height: 1.4; }
+}
+@media (max-width: 440px) {
+    .admin-topbar { flex-wrap: wrap; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+    .admin-topbar-actions { justify-content: space-between; width: 100%; }
+    .admin-heading { flex-direction: column; gap: 7px; }
+}

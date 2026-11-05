@@ -1,0 +1,64 @@
+.review-compose { width: min(580px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); margin: auto; padding: 24px; overflow: auto; border: 1px solid #e4e9ef; border-radius: 12px; background: #fff; color: #17233a; box-shadow: 0 20px 70px #10223c33; text-align: left; font-family: Arial, sans-serif; }
+.review-compose::backdrop { background: #0e1928b8; }
+.review-compose-heading { display: flex; align-items: start; justify-content: space-between; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid #edf0f3; }
+.review-compose-heading h2 { margin: 0; font-size: 23px; }
+.review-compose-heading p { margin: 7px 0 0; color: #6c7b92; font-size: 13px; overflow-wrap: anywhere; }
+.review-compose-close { display: grid; place-items: center; flex: none; width: 32px; height: 32px; padding: 0; border: 1px solid #e3e9ef; border-radius: 6px; background: #fff; color: #53657f; }
+.review-compose-close svg { width: 19px; height: 19px; }
+.review-compose-fields { min-width: 0; margin: 0; padding: 0; border: 0; }
+.review-compose-hint { margin: 15px 0; color: #738197; font-size: 12px; line-height: 1.5; }
+.review-compose-criteria { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; margin-bottom: 22px; }
+.review-compose-score { min-width: 0; margin: 0; padding: 0; border: 0; }
+.review-compose-score legend { margin-bottom: 6px; color: #35455d; font-size: 13px; font-weight: 700; }
+.review-compose-score > div { display: flex; align-items: center; gap: 2px; }
+.review-compose-score label { position: relative; display: grid; place-items: center; width: 29px; height: 34px; flex: none; color: #bbc5d0; cursor: pointer; border-radius: 4px; }
+.review-compose-score label.is-selected { color: #efa600; }
+.review-compose-score label.is-selected svg { fill: currentColor; }
+.review-compose-score label:focus-within { outline: 2px solid #e44c19; outline-offset: 1px; }
+.review-compose-score label svg { width: 24px; height: 24px; }
+.review-compose-score input, .review-compose-sr { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.review-compose-score > div > span { margin-left: 6px; color: #7a8799; font-size: 11px; white-space: nowrap; }
+.review-compose-content { display: block; margin-bottom: 8px; color: #35455d; font-size: 13px; font-weight: 700; }
+.review-compose-content span { color: #7a8799; font-weight: 400; }
+.review-compose textarea { display: block; width: 100%; min-height: 110px; margin: 0; padding: 11px 12px; border: 1px solid #d8e0e9; border-radius: 6px; background: #fff; color: #17233a; font: 14px/1.6 Arial, sans-serif; resize: vertical; }
+.review-compose textarea:focus { outline: 2px solid #f5a58e; outline-offset: 1px; }
+.review-compose textarea[aria-invalid="true"] { border-color: #d84427; }
+.review-compose-counter { display: flex; justify-content: space-between; gap: 8px; margin: 6px 0 0; color: #7a8799; font-size: 11px; }
+.review-compose-field-error { margin: 6px 0; color: #b82f18; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.review-compose-field-error:empty { display: none; }
+.review-compose-image-heading { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; margin: 20px 0 10px; color: #35455d; font-size: 13px; font-weight: 700; }
+.review-compose-image-heading small, .review-compose-image-heading > span:last-child { color: #7a8799; font-size: 12px; font-weight: 400; }
+.review-compose-images { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
+.review-compose-images > div, .review-compose-add { position: relative; min-width: 0; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid #dce4ec; border-radius: 6px; background: #edf2f6; }
+.review-compose-images img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.review-compose-images .detail-photo-fallback svg { width: 22px; height: 22px; }
+.review-compose-images > div > button { position: absolute; top: 3px; right: 3px; display: grid; place-items: center; width: 25px; height: 25px; padding: 0; border: 0; border-radius: 50%; background: #fff; color: #ae301a; }
+.review-compose-images > div > button svg { width: 16px; height: 16px; }
+.review-compose-add { display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; border-style: dashed; background: #fff8f4; color: #d94424; cursor: pointer; font-size: 11px; }
+.review-compose-add > svg { width: 21px; height: 21px; }
+.review-compose-add input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.review-compose-add:focus-within { outline: 2px solid #e44c19; outline-offset: 2px; }
+.review-compose-progress { display: flex; align-items: center; gap: 7px; color: #6c7b92; font-size: 12px; }
+.review-compose-progress svg { width: 16px; height: 16px; }
+.review-compose-error { margin-top: 14px; padding: 12px; border: 1px solid #efc9bd; border-radius: 6px; background: #fff5f0; color: #a63c24; font-size: 13px; overflow-wrap: anywhere; }
+.review-compose-error p { margin: 0; line-height: 1.5; }
+.review-compose-error button { margin: 9px 12px 0 0; padding: 6px 9px; border: 1px solid #e6b5a6; border-radius: 4px; background: #fff; color: #a63c24; }
+.review-compose-error a { display: inline-block; margin-top: 9px; color: inherit; }
+.review-compose-actions { display: flex; flex-wrap: wrap; justify-content: end; gap: 10px; margin-top: 20px; padding-top: 16px; border-top: 1px solid #edf0f3; }
+.review-compose-actions > button { min-height: 39px; }
+.review-compose-actions > button:first-child { padding: 8px 17px; border: 1px solid #d9e2eb; border-radius: 5px; background: #fff; color: #53657f; font-size: 13px; }
+.detail-review-notice { margin-bottom: 15px; padding: 12px 15px; border: 1px solid #badfc8; border-radius: 6px; background: #eefaf2; color: #256642; font-size: 13px; line-height: 1.5; }
+.review-delete { width: min(460px, calc(100vw - 24px)); }
+.review-delete-description { margin: 18px 0; color: #53657f; font-size: 14px; line-height: 1.7; overflow-wrap: anywhere; }
+.review-delete-confirm { background: #d63620; }
+.review-delete-confirm:hover:not(:disabled) { background: #b12b18; }
+@media (max-width: 540px) {
+    .review-compose { padding: 18px; }
+    .review-compose-criteria { grid-template-columns: 1fr; gap: 13px; }
+    .review-compose-score > div { gap: 4px; }
+    .review-compose-score label { width: 34px; height: 36px; }
+    .review-compose-heading h2 { font-size: 21px; }
+    .review-compose-images { gap: 6px; }
+    .review-compose-add { font-size: 10px; gap: 3px; }
+    .review-compose-add > svg { width: 18px; height: 18px; }
+}

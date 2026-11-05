@@ -1,0 +1,32 @@
+.explore-card { position: relative; min-width: 0; overflow: hidden; border: 1px solid #edf0f4; border-radius: 7px; background: #fff; box-shadow: 0 2px 9px rgba(30, 48, 70, .035); }
+.explore-card-link { position: absolute; inset: 0; z-index: 1; }
+.explore-card-link:focus-visible { outline: 2px solid #e44c19; outline-offset: -3px; }
+.explore-card-image { position: relative; aspect-ratio: var(--eatery-image-ratio); overflow: hidden; background: var(--eatery-image-background); }
+.explore-card-image img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.explore-card-image-fallback { display: grid; place-items: center; width: 100%; height: 100%; color: #8c9aaa; }
+.explore-card-image-fallback svg { width: 40px; height: 40px; stroke-width: 1.5; }
+.explore-favorite { position: relative; z-index: 2; display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; min-height: 36px; padding: 0; border: 1px solid #e0e6ec; border-radius: 50%; background: #fff; color: #6c7b8d; line-height: 1; cursor: pointer; }
+.explore-favorite:focus-visible { outline: 2px solid #e44c19; outline-offset: 2px; }
+.explore-favorite svg { display: block; width: 20px; height: 20px; stroke-width: 2; }
+.explore-favorite:hover { border-color: #efb9a8; background: #fff7f3; color: #d54320; }
+.explore-favorite.is-favorite { border-color: #f3c2b3; background: #fff3ed; color: #e44922; }
+.explore-favorite.is-favorite svg { fill: currentColor; }
+.explore-favorite:disabled { cursor: wait; opacity: .65; }
+.explore-card-body { display: grid; align-content: start; justify-items: start; gap: 8px; min-height: 0; padding: 12px 14px 14px; }
+.eatery-card-heading { display: flex; align-items: center; gap: 10px; width: 100%; min-width: 0; min-height: 36px; }
+.explore-card-name { display: -webkit-box; width: 100%; min-width: 0; margin: 0; padding: 0; overflow: hidden; border: 0; background: transparent; color: #14233e; font-size: 16px; font-weight: 700; line-height: 21px; text-align: left; text-overflow: ellipsis; white-space: normal; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.explore-card:hover .explore-card-name { color: #c32d13; }
+.explore-rating { display: flex; align-items: center; gap: 6px; max-width: 100%; min-width: 0; margin: 0; color: #607391; font-size: 13px; line-height: 18px; white-space: nowrap; }
+.explore-rating > span:first-of-type { color: #34445c; font-weight: 600; }
+.explore-rating > svg { width: 16px; height: 16px; flex: none; fill: #f5aa00; color: #f5aa00; stroke-width: 1; }
+.explore-rating.is-unrated { color: #7587a2; }
+.explore-review-count { min-width: 0; overflow: hidden; color: #8495af; text-overflow: ellipsis; }
+.eatery-card-meta { display: grid; justify-items: start; gap: 6px; width: 100%; min-width: 0; }
+.explore-category { display: inline-block; max-width: 100%; overflow: hidden; padding: 3px 7px; border-radius: 4px; background: #fff2eb; color: #d53718; font-size: 12px; line-height: 18px; text-overflow: ellipsis; white-space: nowrap; }
+.explore-location { display: flex; align-items: flex-start; width: 100%; min-width: 0; gap: 4px; margin: 0; color: #7587a2; font-size: 12px; line-height: 18px; overflow-wrap: anywhere; }
+.explore-location span { min-width: 0; }
+.explore-location svg { width: 15px; height: 15px; margin-top: 1px; flex: none; color: #6c7f9c; }
+
+@media (max-width: 650px) {
+    .explore-favorite { flex-basis: 40px; width: 40px; height: 40px; min-height: 40px; }
+}

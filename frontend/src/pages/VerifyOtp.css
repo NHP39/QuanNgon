@@ -1,0 +1,221 @@
+.verify-page {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    padding: 24px 16px;
+    overflow-y: auto;
+    background: #fff9f8;
+}
+
+.verify-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(700px, 100%);
+    min-height: min(650px, calc(100dvh - 48px));
+    padding: 48px 34px;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 12px 38px rgba(86, 45, 35, .08);
+}
+
+.verify-content {
+    width: min(545px, 100%);
+    text-align: center;
+}
+
+.verify-content h1 {
+    margin: 0;
+    color: #a22220;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.verify-subtitle {
+    margin: 16px 0 20px;
+    color: #a18d89;
+    font-size: 20px;
+}
+
+.verify-digits {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+    width: min(444px, 100%);
+    margin: 0 auto;
+}
+
+.verify-digits input {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #ded9d8;
+    border-radius: 11px;
+    outline: none;
+    background: #f5f4f4;
+    color: #a22220;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.verify-digits input:focus {
+    border-color: #d56850;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(213, 104, 80, .12);
+}
+
+.verify-timer {
+    min-height: 24px;
+    margin: 16px 0 6px;
+    color: #ed5b23;
+    font-size: 16px;
+}
+
+.verify-submit {
+    width: 100%;
+    height: 60px;
+    border: 0;
+    border-radius: 11px;
+    background: #f3a086;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.verify-submit:not(:disabled):hover {
+    background: #e98c70;
+}
+
+.verify-submit:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+}
+
+.verify-resend {
+    margin-top: 18px;
+    border: 0;
+    background: transparent;
+    color: #9c8681;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.verify-resend:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.verify-back {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #a18d89;
+    cursor: pointer;
+}
+
+.verify-back:hover {
+    background: #f5f0ef;
+}
+.verify-back svg { width: 19px; height: 19px; }
+
+.verify-error,
+.verify-success {
+    margin: 8px 0 12px;
+    font-size: 14px;
+}
+
+.verify-error {
+    color: #a22220;
+}
+
+.verify-success {
+    color: #23704c;
+}
+
+@media (max-width: 600px) {
+    .verify-card {
+        padding: 64px 24px 40px;
+        border-radius: 18px;
+    }
+
+    .verify-content h1 {
+        font-size: 28px;
+    }
+
+    .verify-subtitle {
+        font-size: 16px;
+    }
+
+    .verify-digits {
+        gap: 8px;
+    }
+
+    .verify-digits input {
+        height: 56px;
+        border-radius: 8px;
+        font-size: 24px;
+    }
+}
+
+.verify-page {
+    background: linear-gradient(90deg, #f5f5f5, #ffebe8);
+}
+
+.verify-card {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+}
+
+.verify-content h1,
+.verify-digits input,
+.verify-timer {
+    color: #a22809;
+}
+
+.verify-subtitle {
+    color: #666;
+}
+
+.verify-digits input:focus {
+    border-color: #e44c19;
+    box-shadow: 0 0 0 3px rgba(228, 76, 25, .15);
+}
+
+.verify-submit {
+    background: #a22809;
+}
+
+.verify-submit:not(:disabled):hover {
+    background: #841f08;
+}
+
+.verify-submit:disabled {
+    background: #a22809;
+    opacity: .55;
+}
+
+.verify-resend {
+    color: #a22809;
+}
+
+.verify-resend:disabled {
+    color: #888;
+    opacity: .7;
+    cursor: not-allowed;
+}
+
+.verify-back {
+    color: #a22809;
+}

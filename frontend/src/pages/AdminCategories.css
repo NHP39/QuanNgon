@@ -1,0 +1,26 @@
+.admin-category-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.admin-categories-screen .admin-categories-table { min-width: 0; table-layout: fixed; }
+.admin-categories-table th:nth-child(2) { width: 110px; }
+.admin-categories-table th:last-child { width: 154px; }
+.admin-categories-table strong { overflow-wrap: anywhere; }
+.admin-category-request-status { display: flex; align-items: center; gap: 7px; min-height: 26px; color: #566e96; font-size: 12px; }
+.admin-category-spinner { width: 16px; height: 16px; flex: none; animation: admin-category-spin 1s linear infinite; }
+.admin-category-feedback { margin-bottom: 14px; padding: 15px; border: 1px solid #efb7b7; border-radius: 6px; background: #fff5f5; color: #a02929; }
+.admin-category-feedback p { margin: 0 0 12px; overflow-wrap: anywhere; }
+.admin-category-feedback a { text-decoration: none; }
+.admin-category-notice { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; padding: 12px 14px; border: 1px solid #b9e4cb; border-radius: 6px; background: #effaf3; color: #176b3e; font-size: 13px; }
+.admin-category-notice.warning { background: #fff8e9; border-color: #edd49d; color: #755719; }
+.admin-category-notice span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.admin-category-notice button { display: grid; place-items: center; flex: none; width: 24px; height: 24px; padding: 0; border: 0; background: transparent; color: inherit; }
+.admin-category-notice svg { width: 17px; height: 17px; }
+.admin-categories-screen .admin-dialog strong { overflow-wrap: anywhere; }
+@keyframes admin-category-spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+    .admin-categories-table th:nth-child(2) { width: 76px; }
+    .admin-categories-table th:last-child { width: 100px; }
+    .admin-categories-table :is(th, td) { padding-inline: 8px; }
+    .admin-category-delete { width: 34px; min-height: 34px; padding: 0; }
+    .admin-category-delete span { display: none; }
+}
+@media (max-width: 440px) { .admin-category-stats { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .admin-category-spinner { animation: none; } }
