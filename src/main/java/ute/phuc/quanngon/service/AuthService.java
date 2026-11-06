@@ -11,6 +11,7 @@ import ute.phuc.quanngon.dto.Request.RegisterRequest;
 import ute.phuc.quanngon.dto.Request.ResendOtpRequest;
 import ute.phuc.quanngon.dto.Request.VerifyOtpRequest;
 import ute.phuc.quanngon.dto.Response.OtpResponse;
+import ute.phuc.quanngon.dto.Response.PasswordResetOtpStatusResponse;
 import ute.phuc.quanngon.dto.UserInfo;
 
 import java.util.Map;
@@ -26,5 +27,6 @@ public interface AuthService {
     Map<String, String> verifyOtp(VerifyOtpRequest request);
     OtpResponse resendOtp(ResendOtpRequest request);
     OtpResponse forgotPassword(ForgotPasswordRequest request);
+    PasswordResetOtpStatusResponse getPasswordResetOtpStatus(ForgotPasswordRequest request, String ip);
     void resetPassword(ResetPasswordRequest request);
 }

@@ -71,6 +71,16 @@ public class OtpServiceImpl implements OtpService {
     }
 
     @Override
+    public long getPasswordResetOtpExpiresIn(String email) {
+        Long remainingSeconds = redisTemplate.getExpire(
+                passwordResetOtpKey(email), TimeUnit.SECONDS);
+        if (remainingSeconds == null || remainingSeconds < 0) {
+            return 0;
+        }
+        return Math.max(1L, remainingSeconds);
+    }
+
+    @Override
     public boolean consumePasswordResetOtp(String email, String otp) {
         // Kiểm tra mã rồi xóa nguyên tử để mỗi OTP chỉ được sử dụng một lần.
         String storedOtpHash = redisTemplate.opsForValue().get(passwordResetOtpKey(email));

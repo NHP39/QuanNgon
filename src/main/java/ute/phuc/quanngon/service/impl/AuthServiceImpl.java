@@ -32,6 +32,7 @@ import ute.phuc.quanngon.dto.Request.RegisterRequest;
 import ute.phuc.quanngon.dto.Request.ResendOtpRequest;
 import ute.phuc.quanngon.dto.Request.VerifyOtpRequest;
 import ute.phuc.quanngon.dto.Response.OtpResponse;
+import ute.phuc.quanngon.dto.Response.PasswordResetOtpStatusResponse;
 import ute.phuc.quanngon.dto.UserInfo;
 import ute.phuc.quanngon.config.OtpProperties;
 import ute.phuc.quanngon.entity.Account;
@@ -51,6 +52,7 @@ import ute.phuc.quanngon.repository.UserRepository;
 import ute.phuc.quanngon.security.CustomUserDetails;
 import ute.phuc.quanngon.security.JwtService;
 import ute.phuc.quanngon.service.AuthService;
+import ute.phuc.quanngon.service.AuthRateLimitService;
 import ute.phuc.quanngon.service.EmailService;
 import ute.phuc.quanngon.service.OtpService;
 
@@ -88,6 +90,7 @@ public class AuthServiceImpl implements AuthService {
     private final EmailService emailService;
     private final ApplicationEventPublisher eventPublisher;
     private final AsyncTaskExecutor applicationTaskExecutor;
+    private final AuthRateLimitService authRateLimitService;
 
     @Override
     @Transactional
@@ -399,6 +402,21 @@ public class AuthServiceImpl implements AuthService {
                 "Mã OTP mới đã được gửi đến email.",
                 email,
                 otpProperties.getExpirationSeconds());
+    }
+
+    @Override
+    public PasswordResetOtpStatusResponse getPasswordResetOtpStatus(
+            ForgotPasswordRequest request, String ip) {
+        // Kiểm tra email và trạng thái tài khoản.
+        String email = request.email();
+        findPasswordResetAccount(email);
+
+        // Đọc thời hạn OTP và thời gian cần chờ gửi lại.
+        long expiresIn = otpService.getPasswordResetOtpExpiresIn(email);
+        long resendAfterSeconds = authRateLimitService.getPasswordResetOtpResendAfterSeconds(email, ip);
+
+        // Trả trạng thái để FE lựa chọn tiếp tục nhập mã hoặc gửi mã mới.
+        return new PasswordResetOtpStatusResponse(expiresIn > 0, expiresIn, resendAfterSeconds);
     }
 
     @Override
