@@ -6,6 +6,7 @@ public interface OtpService {
     boolean verifyOtp(String email, String otp);
     void deleteOtp(String email);
     String savePasswordResetOtp(String email, String otp);
+    long getPasswordResetOtpExpiresIn(String email);
     boolean consumePasswordResetOtp(String email, String otp);
     boolean deletePasswordResetOtp(String email, String expectedOtpHash);
 }

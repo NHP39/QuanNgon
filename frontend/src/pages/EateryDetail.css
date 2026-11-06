@@ -22,6 +22,8 @@ body:has(.eatery-detail-page) { display: block; padding: 0; background: #f5f8fb;
 .detail-gallery-controls svg { width: 20px; height: 20px; }
 .detail-gallery-counter { position: absolute; right: 12px; bottom: 12px; padding: 5px 10px; border-radius: 20px; background: rgba(14, 24, 37, .65); color: #fff; font-size: 12px; line-height: 1.5; pointer-events: none; }
 .detail-gallery-thumbnails { display: flex; gap: 10px; min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; padding: 3px; scrollbar-width: thin; scrollbar-color: #c6cfda transparent; }
+.detail-gallery-thumbnail:first-child { margin-inline-start: auto; }
+.detail-gallery-thumbnail:last-child { margin-inline-end: auto; }
 .detail-gallery-thumbnail { position: relative; flex: 0 0 calc((100% - 60px) / 7); min-width: 72px; aspect-ratio: var(--eatery-image-ratio); overflow: hidden; padding: 0; border: 2px solid transparent; border-radius: 6px; background: var(--eatery-image-background); }
 .detail-gallery-thumbnail:hover { border-color: #f2b39d; }
 .detail-gallery-thumbnail.is-selected { border-color: #e44c19; box-shadow: 0 0 0 1px #e44c19; }

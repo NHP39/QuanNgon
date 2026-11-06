@@ -24,6 +24,7 @@ import ute.phuc.quanngon.dto.Request.ResendOtpRequest;
 import ute.phuc.quanngon.dto.Request.VerifyOtpRequest;
 import ute.phuc.quanngon.dto.Response.ErrorResponse;
 import ute.phuc.quanngon.dto.Response.OtpResponse;
+import ute.phuc.quanngon.dto.Response.PasswordResetOtpStatusResponse;
 import ute.phuc.quanngon.dto.UserInfo;
 import ute.phuc.quanngon.service.AuthRateLimitService;
 import ute.phuc.quanngon.service.AuthService;
@@ -38,6 +39,18 @@ public class AuthController {
 
     private final AuthService authService;
     private final AuthRateLimitService authRateLimitService;
+
+    @Operation(summary = "Kiểm tra trạng thái OTP đặt lại mật khẩu",
+            description = "Trả thời hạn OTP và thời gian chờ gửi lại; không tạo hoặc gửi mã.")
+    @ApiResponse(responseCode = "200", description = "Đã lấy trạng thái OTP", content = @Content(
+            mediaType = "application/json", schema = @Schema(implementation = PasswordResetOtpStatusResponse.class)))
+    @PostMapping("/password-reset/otp-status")
+    public ResponseEntity<?> getPasswordResetOtpStatus(
+            @Valid @RequestBody ForgotPasswordRequest request,
+            HttpServletRequest httpRequest) {
+        return ResponseEntity.ok(
+                authService.getPasswordResetOtpStatus(request, httpRequest.getRemoteAddr()));
+    }
 
     @Operation(summary = "Yêu cầu OTP đặt lại mật khẩu",
             description = "Kiểm tra email rồi gửi OTP ở nền; mã có hạn và chỉ dùng một lần. Có giới hạn gửi và thời gian chờ 60 giây.")

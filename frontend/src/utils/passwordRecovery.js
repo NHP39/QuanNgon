@@ -14,8 +14,13 @@ export function readPasswordRecovery() {
     }
 }
 
-export function savePasswordRecovery(email, expiresIn) {
-    const state = { email, expiresAt: Date.now() + expiresIn * 1000, resendAt: Date.now() + 60000 };
+export function savePasswordRecovery(email, expiresIn, resendAfterSeconds = 60) {
+    const now = Date.now();
+    const state = {
+        email,
+        expiresAt: expiresIn > 0 ? now + expiresIn * 1000 : 0,
+        resendAt: resendAfterSeconds > 0 ? now + resendAfterSeconds * 1000 : 0
+    };
     try {
         sessionStorage.setItem(emailKey, email);
         sessionStorage.setItem(expiryKey, String(state.expiresAt));

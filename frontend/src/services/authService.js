@@ -14,6 +14,17 @@ export const verifyOtp = (email, otp) =>
 export const resendOtp = (email) =>
     authRequest("/resend-otp", "POST", { email });
 
+export async function getPasswordResetOtpStatus(email) {
+    const data = await authRequest("/password-reset/otp-status", "POST", { email });
+    if (!data || typeof data.otpActive !== "boolean"
+        || !Number.isFinite(data.expiresIn) || data.expiresIn < 0
+        || !Number.isFinite(data.resendAfterSeconds) || data.resendAfterSeconds < 0
+        || data.otpActive !== (data.expiresIn > 0)) {
+        throw new Error("Chưa kiểm tra được trạng thái mã OTP. Vui lòng thử lại.");
+    }
+    return data;
+}
+
 export async function forgotPassword(email) {
     const data = await authRequest("/forgot-password", "POST", { email });
     if (!data || typeof data.email !== "string" || !Number.isFinite(data.expiresIn) || data.expiresIn <= 0) {
